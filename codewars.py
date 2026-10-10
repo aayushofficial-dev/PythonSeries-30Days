@@ -106,3 +106,56 @@ def invert(lst):
         result.append(-x)
     return result
 print(invert([1, 2, -3, 4, -5]))
+
+# points 
+def points(games):
+    total_points = 0
+    for game in games:
+        x, y = map(int, game.split(':'))
+
+        if x > y:
+            total_points += 3
+        elif x == y:
+            total_points += 1
+    return total_points
+print('Total points you got:', points(['1:3', '3:0', '1:1', '5:4']))
+
+
+# make negative: yo program le chai positive number lai negative banauxa ra negative lai negative nai rakhxa
+def make_negative(number):
+    return -abs(number)
+print(make_negative(-1))
+print(make_negative(1))
+
+# find average
+def average(num):
+    if len(num) == 0:
+        return 0
+    return sum(num) / len(num)
+print('Average:', average([1, 2, 3, 4, 5]))
+
+# array check
+def check(seq, elem):
+    return elem in seq
+print(check([1, 2, 3, 4, 5], 3))
+
+# slicing in string and list
+x = [1, 2, 3, 4, 5]
+name = 'ronaldo'
+print(x[::2]) # [1, 3, 5]
+print(x[::-1]) # [5, 4, 3, 2, 1]
+print(name[::-1]) # odlanor
+print(x[0]) # 1
+
+# loops: hard
+i = 0
+result = []
+while True:
+    i += 1
+    if i > 5:
+        break
+    if i % 2 == 0:
+        continue
+    result.append(i)
+print(result)
+
