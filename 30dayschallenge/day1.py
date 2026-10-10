@@ -73,3 +73,41 @@ chr(65) is 'A'
 chr_value = int(input('Enter the value:'))
 ord_value = chr(chr_value)
 print(ord_value)
+
+# time conversion: Write a python program to convert seconds into hours, minutes and seconds.
+late_in_sec = 13445
+
+sec_into_min = late_in_sec % 60
+min_into_hour = (late_in_sec // 60) % 60
+hours = late_in_sec // 3600
+
+print(f"{hours} hours, {min_into_hour} minutes, {sec_into_min} seconds")
+
+'''
+Implicit type conversion: Python converts the type automatically.
+---> Implicit type conversion happens when Python automatically converts a value to another compatible type.
+
+Important: Python does not automatically convert every incompatible type.
+For example, "10" + 5 raises a TypeError.
+'''
+a = 10
+b = 2.5
+
+result = a + b
+print(result)
+print(type(result))
+
+'''
+Explicit type conversion
+---> Explicit conversion happens when you tell Python to convert a value yourself.
+
+Note that not every conversion is valid. For example, int("hello") raises a ValueError.
+'''
+a = '10'
+
+b = int(a)
+
+print(b)
+result = b + 5
+print(result)
+print(type(result))
