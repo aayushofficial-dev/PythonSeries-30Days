@@ -159,3 +159,35 @@ def min_max_sum(numbers):
             largest = num
     return smallest + largest
 print(min_max_sum([1, 2, 3, 4, 5]))
+
+
+# working with membership operator: 'in' and 'not in'
+a = 'aayush'
+
+if 'z' in a:
+    print('True')
+else:
+    print('False')
+
+
+lst = [1, 2, 3, 4, 5]
+
+if 6 in lst:
+    print(f'{1} is present in the list.')
+else:
+    print('It is not present in the list.')
+
+
+# one random question from the mind: to find the minimun and maximum number in a list
+def min_max(number):
+    min_num = number[0]
+    max_num = number[0]
+
+    for num in number:
+        if num < min_num:
+            min_num = num
+        elif num > max_num:
+            max_num = num
+
+    return min_num, max_num
+print(min_max([1, 2, 3, 4, 5]))
