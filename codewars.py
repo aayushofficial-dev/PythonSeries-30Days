@@ -1,45 +1,45 @@
 # Character Frequency
 # Write a Python program that takes a string and counts how many times each character appears.
 
-user_input = input('Enter the string:')
+# user_input = input('Enter the string:')
 
-result = {}
+# result = {}
 
-for i in user_input:
-    if i in result:
-        result[i] += 1
-    else:
-        result[i] = 1
+# for i in user_input:
+#     if i in result:
+#         result[i] += 1
+#     else:
+#         result[i] = 1
 
-print(result)
+# print(result)
 
 # Count vowel and consonant
-user_input = input('Enter the string:').lower()
+# user_input = input('Enter the string:').lower()
 
-vowel_letter = 'aeiou'
-vowel = 0
-consonant = 0
+# vowel_letter = 'aeiou'
+# vowel = 0
+# consonant = 0
 
-for char in user_input:
-    if char.isalpha():
-        if char in vowel_letter:
-            vowel += 1
-        else:
-            consonant += 1
+# for char in user_input:
+#     if char.isalpha():
+#         if char in vowel_letter:
+#             vowel += 1
+#         else:
+#             consonant += 1
 
-print(f'Vowel count: {vowel}')
-print(f'Consonant count: {consonant}')
+# print(f'Vowel count: {vowel}')
+# print(f'Consonant count: {consonant}')
 
 # First Non-Repeating Character
 # Write a Python program that finds the first character that appears only once in a string.
-user_input = input('Enter the string:')
+# user_input = input('Enter the string:')
 
-for char in user_input:
-    if user_input.count(char) == 1:
-        print(f'The first non-repeating character is: {char}')
-        break
-else:
-    print('No non-repeating character is found.')
+# for char in user_input:
+#     if user_input.count(char) == 1:
+#         print(f'The first non-repeating character is: {char}')
+#         break
+# else:
+#     print('No non-repeating character is found.')
 
 # Find the Second-Largest Number
 # Write a Python program that finds the second-largest unique number in a list without using sort() or sorted().
@@ -158,4 +158,34 @@ while True:
         continue
     result.append(i)
 print(result)
+
+# Dragon
+def hero(bullets, dragon):
+    return bullets >= dragon * 2
+print(hero(10, 5))
+
+# Disemvowel Trolls
+def disemvowel(string):
+    return ''.join(c for c in string if c.lower() not in 'aeiou')
+print(disemvowel('Great thing takes time.')) 
+
+# maybe the tuple
+t = (10, 20, 30, 40, 50)
+print(len(t))
+print(t[::-1])
+
+# String
+name = 'ronaldo'
+print(len(name))
+for index, n in enumerate(name):
+    print(f'Index: {index}, Value: {n}')
+
+print(name[1:5])
+
+# addition of different data types:
+print(7 + 7) # 14
+print('7' + '7') # 77
+print(True + True) # 2
+print(False + False) # 0
+print(5 + 5.5) # 10.5
 
