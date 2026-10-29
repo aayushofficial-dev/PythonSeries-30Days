@@ -70,3 +70,23 @@ def reverse(input):
         result = i + result
     return result
 print(reverse('aayush'))
+
+
+def demo():
+    x = [10]
+    print(id(x))
+
+
+for i in range(3):
+    demo()
+
+
+print('next one..')
+
+def demo():
+    x = [10]
+    return x 
+
+for i in range(3):
+    result = demo()
+    print(id(result))

@@ -189,3 +189,101 @@ print(True + True) # 2
 print(False + False) # 0
 print(5 + 5.5) # 10.5
 
+
+
+# playing with digits 
+def dig_pow(n, p):
+    s = 0
+    for i, digit in enumerate(str(n)):
+        s += int(digit) ** (p + 1)
+
+    if s % n == 0:
+        return s // n
+    else:
+        return -1 
+print(dig_pow(8, 9))
+
+# min_max
+def min_max(lst):
+    min_n = lst[0]
+    max_n = lst[0]
+
+    for i in lst:
+        if i < min_n:
+            min_n = i
+        if i > max_n:
+            max_n = i
+
+    return [min_n, max_n]
+print(min_max([1,2,3,4,5]))
+
+# consecutive string
+def longest_consec(strarr, k):
+    # condtitons to handle edge cases
+    n = len(strarr)
+    if n == 0 or k > n or k <= 0:
+        return ""
+    
+    longest_string = ""
+    
+    # Loop to iterate through the list
+    for i in range(n - k + 1):
+        current_slice = strarr[i : i+k]
+        current_string = ''.join(current_slice)
+        
+        # condition to check if the new string is longer
+        if len(current_string) > len(longest_string):
+            longest_string = current_string
+    
+    return longest_string
+
+print(longest_consec(['aayush', 'is', 'the', 'best', 'tech', 'enginerr'], 2))
+
+
+
+
+import re
+txt = "The rain in Spain"
+x = re.search("^The.*Spain$", txt)
+print(x)
+
+import json 
+# some JSON:
+x =  '{ "name":"John", "age":30, "city":"New York"}'
+
+# parse x:
+y = json.loads(x)
+
+# the result is a Python dictionary:
+print(y["name"])
+
+a = [1,2,3]
+b = [1,2,3]
+c = a
+print(a == b)
+print(a is b)
+print(a is c)
+
+a = 'aayushisthebesttechengineerintheworld'
+x = lambda func: func.upper()
+print(x(a))
+
+def mygenerator():
+    yield 1
+    yield 2
+    yield 3
+
+for value in mygenerator():
+    print(value)
+
+
+print(~(~2))
+print(~(~3))
+print(~2)
+
+age = 'aayush'
+
+if isinstance(age, int):
+    print('it is num')
+else:
+    print('it is str')
