@@ -51,3 +51,10 @@ print(f"Let me provide you the multiplication table of {a}")
 
 for i in range(1, 11):
     print(f"{a} * {i} = {a*i}")
+
+
+# walrus operator 
+numbers = [1,2,3,4,5]
+
+if (count := len(numbers)) > 3:
+    print(f'List has {count} elements')

@@ -240,8 +240,6 @@ def longest_consec(strarr, k):
 print(longest_consec(['aayush', 'is', 'the', 'best', 'tech', 'enginerr'], 2))
 
 
-
-
 import re
 txt = "The rain in Spain"
 x = re.search("^The.*Spain$", txt)
@@ -287,3 +285,36 @@ if isinstance(age, int):
     print('it is num')
 else:
     print('it is str')
+
+
+import re
+
+def count_smileys(arr):
+    # ^[:;] matches eyes
+    # [-~]? matches an optional nose
+    # [)D]$ matches the mouth
+    pattern = r'^[:;][-~]?[)D]$'
+    
+    count = 0
+    for face in arr:
+        if re.match(pattern, face):
+            count += 1
+            
+    return count
+
+
+def count_smileys(arr):
+    eyes = {':', ';'}
+    noses = {'-', '~'}
+    mouths = {')', 'D'}
+    
+    count = 0
+    for face in arr:
+        if len(face) == 2:
+            if face[0] in eyes and face[1] in mouths:
+                count += 1
+            elif len(face) == 3:
+                if face[0] in eyes and face[1] in noses and face[2] in mouths:
+                    count += 1
+    return count
+print(count_smileys([';D', ':-(', ':-)', ';~)']))
