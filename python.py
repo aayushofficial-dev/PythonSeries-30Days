@@ -180,3 +180,90 @@ for i in range(k):
     arr[0] = last
 
 print(arr)
+
+def expanded_form(num):
+    num_str = str(num)
+    length = len(num_str)
+    result = []
+    
+    for i, digit in enumerate(num_str):
+        if digit != '0':
+            # Calculate the place value by appending the appropriate number of zeros
+            place_value = digit + '0' * (length - i - 1)
+            result.append(place_value)
+            
+    return ' + '.join(result)
+print(expanded_form(79))
+
+
+"""When provided with a number between 0-9, return it in words. Note that the input is guaranteed 
+to be within the range of 0-9.
+
+Input: 1
+Output: "One".
+"""
+def switch_it_up(number):
+    num = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+    result = ""
+    for i, value in enumerate(num):
+        if number >= 0 and number <= 9:
+            if i == number:
+                result = value
+    return result.capitalize()
+print(switch_it_up(2))
+
+
+num = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+for i, value in enumerate(num):
+    print(i, value)
+
+"""
+def get_volume_of_cuboid(length, width, height):
+    volume = length * width * height
+    return volume
+print(get_volume_of_cuboid(10, 20, 30))
+"""
+
+
+def reverse_seq(n):
+    result = []
+    for i in range(n, 0, -1):
+        result.append(i)
+    return result
+print(reverse_seq(5))
+
+def human_years_cat_years_dog_years(human_years):
+    # Your code here
+    initialhumanage = 1
+    initialcatage = 15
+    initialdogage = 15
+    if human_years == 1:
+        return [initialhumanage,initialcatage,initialdogage]
+    elif human_years == 2:
+        return [initialhumanage + 1, initialcatage + 9, initialdogage + 9]
+    else:
+        return [human_years, 24 + (human_years -2) * 4, 24 + (human_years - 2) * 5]
+
+print(human_years_cat_years_dog_years(1))
+
+def double_char(s):
+    result = ""
+    for i in s:
+        result += i * 2
+    return result
+print(double_char('string'))
+
+# altERnaTIng cAsE <=> ALTerNAtiNG CaSe
+def to_alternating_case(string):
+    result = ""
+    for s in string:
+        if s.islower():
+            result += s.upper()
+        else:
+            result += s.lower()
+    return result
+print(to_alternating_case('hello aayush'))
+
+a = b = c = 100
+del a
+print(b + c )
