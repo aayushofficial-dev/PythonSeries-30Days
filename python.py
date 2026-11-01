@@ -267,3 +267,29 @@ print(to_alternating_case('hello aayush'))
 a = b = c = 100
 del a
 print(b + c )
+
+a = 10
+b = a
+print(b)
+b <<= a
+print(b)
+
+
+def two_sum(numbers, target):
+    result = {}
+    for i, n in enumerate(numbers):
+        complement = target - n
+        if complement in result:
+            return [result[complement], i]
+        result[n] = i
+    return []
+
+print(two_sum([1,2,3], 4))
+
+
+def count_by(x, n):
+    result = []
+    for i in range(x, (x*n) + 1, x):
+        result.append(i)
+    return result
+print(count_by(3, 10))
